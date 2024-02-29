@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
+    <title>Raspberry Pi 4 Test Page</title>
     <style>
         body {
             background-color: #00008b; /* Dark blue background */
@@ -16,11 +16,26 @@
             padding: 10px;
             text-align: center;
         }
+        pre {
+            background-color: #f0f0f0; /* Light gray background */
+            padding: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Hi, This is a test on my Raspberry Pi 4</h1>
+    <p>This web page will show you how to set up a web server on your Raspberry Pi 3/4/5.</p>
+    <h2>Step 1: Update your packages</h2>
+    <p>Update your packages by typing the following command in the terminal:</p>
+    <pre><code>sudo apt update</code></pre>
+    <p>This will make sure that you get the latest versions of every file you download after this.</p>
+    <h2>Step 2: Install Apache</h2>
+    <p>Install Apache, a web server software, by typing the following command in the terminal:</p>
+    <pre><code>sudo apt install apache2 -y</code></pre>
+    <p>This will allow your Raspberry Pi to answer HTTP requests and serve web pages.</p>
+    <!-- And so on for the rest of the steps -->
 </body>
 </html>
+
 
 

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="http://localhost//Raspberry-pi/logo.png">
+    <title>Web server</title>
+    <style>
+        body {
+            background-color: #C51A4A;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            font-size: 24px;
+            color: #6CC04A;
+            background-color: black;
+            padding: 10px;
+            text-align: center;
+        }
+        p {
+            margin-bottom: 10px;
+        }
+        pre {
+            background-color: #ffffff33;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: Consolas, monospace;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #000000;
+            color: #6CC04A;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #6CC04A;
+            color: #FFFFFF;
+        }
+        #my-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+        .welcome-text {
+            font-size: 24px;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>How to make a private web server</h1>
+        <p>This web page will show you how to set up a web server on your Raspberry Pi 3/4/5.</p>
+        <h2>Step 1: Update your packages</h2>
+        <p>Update Your System: After booting up your Raspberry Pi, open a terminal and update your package lists and
+            upgrade your packages with the following commands:</p>
+        <pre><code>sudo apt-get update</code></pre>
+        <p>And</p>
+        <pre><code>sudo apt-get upgrade</code></pre>
+        <p>This will make sure that you get the latest versions of every file you download after this.</p>
+        <h2>Step 2: Install Apache</h2>
+        <p>Install Apache, a web server software, by typing the following command in the terminal:</p>
+        <pre><code>sudo apt-get install apache2 -y</code></pre>
+        <p>This will allow your Raspberry Pi to answer HTTP requests and serve web pages.</p>
+        <h2>Step 3: Install PHP</h2>
+        <p>Install PHP, a scripting language that can generate dynamic web pages. To do this, type the following command
+            in the terminal:</p>
+        <pre><code>sudo apt-get install php libapache2-mod-php -y</code></pre>
+        <p>This will install PHP and configure Apache to use it.</p>
+        <h2>Step 4: Install MariaDB</h2>
+        <p>Install MariaDB, a database management system that can store and retrieve data for your web applications. To
+            do this, type the following command in the terminal:</p>
+        <pre><code>sudo apt-get install mariadb-server</code></pre>
+        <p>This will install MariaDB and set up a root user with no password. You can change the password later by
+            running the following command:</p>
+        <pre><code>sudo mysql_secure_installation</code></pre>
+        <p>This will also remove some insecure default settings and improve the security of your database.</p>
+        <h2>Step 5: Test your web server</h2>
+        <p>Test your web server by creating a simple HTML file that displays some information. To do this type the following command in the terminal:</p>
+        <pre><code>cd /var/www/html</code></pre>
+        <p>To create and open the Home.html file</p>
+        <pre><code>sudo nano Home.html</code></pre>
+        <p>Add this code to the Home.html file or make your own code:</p>
+ 
+       <pre><code>            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;title&gt;Home Page&lt;/title&gt;
+                &lt;style&gt;
+                    #my-container {
+                        display: flex;
+                        justify-content: center; /* Horizontally center */
+                        align-items: center; /* Vertically center */
+                        height: 100vh; /* Set the height to the viewport height */
+                        background-color: white; /* Set the background color to white */
+                    }
+                &lt;/style&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;div id="my-container"&gt;
+                    &lt;h1&gt;Welcome to my home page!&lt;/h1&gt;
+                    
+                    
+                &lt;/div&gt;
+             &lt;/body&gt;
+             &lt;/html&gt;</code></pre>
+        <h2>Step 6: Restart Apache</h2>
+        <p>To make sure all the changes take effect, restart Apache with the following command:</p>
+        <pre><code>sudo service apache2 restart</code></pre>
+        <h2>Step 7: View website</h2>
+        <p>Open a web browser on your Raspberry Pi or another device on the same network and type the following address:</p>
+        <pre><code>http://raspberrypi.local/Home.html</code></pre>
+        <p>You should see a web page that says "Welcome to my home page! If you see this, congratulations! You have successfully set up a web server on your Raspberry Pi.</p>
+        <h3><a href="." class="button">More Tutorials</a></h3>
+    </div>
+</body>
+</html>
